@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 #Set the contextPath to override the default value of deployment.yaml
-contextPath=/mypath
+#contextPath: /mypath
 replicaCount: 1
 image:
   repository: draft
