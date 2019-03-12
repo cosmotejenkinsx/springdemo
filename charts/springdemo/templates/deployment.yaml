@@ -19,6 +19,9 @@ spec:
     spec:
       containers:
       - name: {{ .Chart.Name }}
+        env:
+        - name: SERVER_SERVLET_CONTEXT_PATH
+          value: "{{ default (printf "%s/%s" .Release.Namespace (include "fullname" .)) .Values.contextPath }}"
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
