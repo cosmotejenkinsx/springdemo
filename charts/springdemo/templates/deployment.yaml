@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: {{ .Chart.Name }}
-        {{- $contextPath :=  default (printf "/%s/%s" .Release.Namespace (default (include "fullname" .) .Values.service.name)) .Values.contextPath -}}
+        {{- $contextPath :=  default (printf "/%s/%s" .Release.Name (default (include "fullname" .) .Values.service.name)) .Values.contextPath -}}
         {{- $probePath :=  printf "%s%s" $contextPath .Values.probePath -}}
         env:
         - name: SERVER_SERVLET_CONTEXT_PATH
