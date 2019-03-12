@@ -6,8 +6,8 @@
 #contextPath: /mypath
 replicaCount: 1
 image:
-  repository: draft
-  tag: dev
+  repository: svtdwrn01.cosmote.gr:5000/cosmotejenkinsx/springdemo
+  tag: 0.0.14
   pullPolicy: IfNotPresent
 service:
   name: springdemo
